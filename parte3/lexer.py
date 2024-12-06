@@ -52,6 +52,14 @@ def find_column(input, token):
 
 def t_ID_LPAR(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*\('
+
+    identifier = t.value[:-1]
+    if identifier in reserved:
+        t.lexer.lexpos -= 1  
+        t.type = reserved[identifier]
+        t.value = identifier
+        return t
+    
     t.type = 'ID_LPAR'  
     t.value = "id("
     return t

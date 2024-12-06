@@ -1,0 +1,41 @@
+def exemploCorreto(int a, int b ){
+
+  int c, d;
+  
+  if(a == 1){
+    c := a + b;
+  }
+
+  if (a == 2){
+    c := a-b;
+  }
+
+  if (a == 3){
+    c := a*b;
+  }
+
+  if (a == 4){
+    c := a/b;
+  }
+
+  if (a == 5){
+    c := a == b;
+  }
+
+  if (a == 6){
+    c := a <> b;
+  }
+
+  return c;
+}
+
+def main(){
+
+  int a, b, c;
+
+  a := 3;
+  b := 5;
+  c := exemploCorreto(a,b);
+  print(c);
+
+}

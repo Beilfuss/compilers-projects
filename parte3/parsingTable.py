@@ -1,3 +1,9 @@
+'''
+Carolina Pacheco da Silva
+Matheus Antunes Monteiro
+Matheus Beilfuss
+'''
+
 PARSING_TABLE = {('S', '$'): ['MAIN'],
  ('S', 'def'): ['MAIN'],
  ('S', '{'): ['MAIN'],
@@ -48,17 +54,17 @@ PARSING_TABLE = {('S', '$'): ['MAIN'],
  ('RETURNST', 'return'): ['return', 'RETURNST’'],
  ('RETURNST’', 'id'): ['id'],
  ('RETURNST’', ';'): [],
- ('IFSTMT', 'if'): ['if', '(', 'EXPR', ')', 'STMT', 'IFSTMT’'],
- ('IFSTMT’', '$'): [],
- ('IFSTMT’', '{'): [],
- ('IFSTMT’', '}'): [],
- ('IFSTMT’', 'int'): [],
- ('IFSTMT’', 'id'): [],
- ('IFSTMT’', ';'): [],
- ('IFSTMT’', 'print'): [],
- ('IFSTMT’', 'return'): [],
- ('IFSTMT’', 'if'): [],
- ('IFSTMT’', 'else'): ['else', 'STMT'],
+ ('IFSTMT', 'if'): ['if', '(', 'EXPR', ')', '{', 'STMTLIST', '}', 'ELSEPART'],
+ ('ELSEPART', '$'): [],
+ ('ELSEPART', '{'): [],
+ ('ELSEPART', '}'): [],
+ ('ELSEPART', 'int'): [],
+ ('ELSEPART', 'id'): [],
+ ('ELSEPART', ';'): [],
+ ('ELSEPART', 'print'): [],
+ ('ELSEPART', 'return'): [],
+ ('ELSEPART', 'if'): [],
+ ('ELSEPART', 'else'): ['else', '{','STMTLIST', '}'],
  ('STMTLIST', '{'): ['STMT', 'STMTLIST’'],
  ('STMTLIST', 'int'): ['STMT', 'STMTLIST’'],
  ('STMTLIST', 'id'): ['STMT', 'STMTLIST’'],

@@ -1,0 +1,33 @@
+def elseSemIf(int a, int b){
+  
+  int c, d, e, f;
+
+  c := a * b;
+  d := b / a;
+  e := c + d;
+  f := b - a;
+
+  if (e >= c){
+    if (f <= d){
+      return c;
+    } else {
+      return a;
+    }
+  } else {
+    return f;
+  } else {
+    return 2;
+  }
+  return a;
+  
+}
+
+def main(){
+  int a, b;
+  a := 3;
+  b := 15;
+
+  c := elseSemIf(a, b);
+
+  return c;
+}
