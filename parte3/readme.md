@@ -139,16 +139,16 @@ Sucesso!
 Lista ordenada de matchs:
 
 Match 1: def
-Match 2: id(
+Match 2: teste(
 Match 3: )
 Match 4: {
 Match 5: print
 Match 6: (
-Match 7: num
+Match 7: 2
 Match 8: )
 Match 9: ;
 Match 10: }
-['def', 'id(', ')', '{', 'print', '(', 'num', ')', ';', '}']
+['def', 'teste(', ')', '{', 'print', '(', '2', ')', ';', '}']
 ```
 
 ### Exemplos de saída para input com erro
@@ -159,7 +159,8 @@ As saídas de inputs com erros incluem as produções geradas até a detecção 
 ```
 Erro: Produção não encontrada: 
 
-Não-terminal fora da tabela de reconhecimento sintático: STMTLIST’ - Valor do input: else 
+Não-terminal fora da tabela de reconhecimento sintático: STMTLIST’. 
+Valor do input: else , Tipo do input: else 
 ```
 
 Ou
@@ -167,6 +168,7 @@ Ou
 ```
 Erro: Terminal incorreto (sem match): 
 
-Terminal esperado: { - Terminal encontrado: id
+Terminal esperado: { 
+Terminal encontrado: valor: return, tipo: return
 
 ```
