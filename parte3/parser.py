@@ -4,7 +4,7 @@ Matheus Antunes Monteiro
 Matheus Beilfuss
 '''
 
-from lexer import lexer, symbolic_lexer
+from lexer import symbolic_lexer
 
 TERMINALS = [
     "id", "num",
@@ -24,16 +24,6 @@ def parser(w, parsingTable):
 
     found_tokens = symbolic_lexer(w + "$")
     
-    '''
-    lexer.input(w)
-    found_tokens = []
-    while True:
-        tok = lexer.token()
-        if not tok:
-            break
-        found_tokens.append(tok.value)
-    '''
-
     buffer = found_tokens
 
     currentSymbolIndex = 0
